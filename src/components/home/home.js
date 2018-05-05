@@ -2,10 +2,14 @@ import React from 'react';
 import {Link} from 'react-router';
 
 //components import
-import Promotion from './promotion';
-import TopDestinations from './topDestinations';
+import Promotion from '../other/promotion';
+import TopDestinations from '../other/topDestinations';
+
+//language import
+import Language from '../language';
 
 class Home extends React.Component {
+
 	render() {
 		return (
 			<div>
@@ -14,13 +18,13 @@ class Home extends React.Component {
 		                <div className="bg-front full-height bg-front-mob-rel">
 		                    <div className="container full-height">
 		                        <div className="rel full-height">
-		                            <div className="tagline visible-lg" id="tagline"><span>É tempo de</span>
+		                            <div className="tagline visible-lg" id="tagline"><span>{Language.get('pt-br', '__itsTimeTo')}</span>
 		                                <ul>
-		                                    <li>viver</li>
+		                                    <li className="active">viver</li>
 		                                    <li>se divertir</li>
 		                                    <li>relaxar</li>
 		                                    <li>se perder</li>
-		                                    <li className="active">descobrir</li>
+		                                    <li>descobrir</li>
 		                                    <li>meditar</li>
 		                                    <li>sair por ai</li>
 		                                    <li>ir</li>

@@ -27,7 +27,7 @@ class Navigation extends React.Component {
                                 <div className="top-user-area clearfix">
                                     <ul className="top-user-area-list list list-horizontal list-border">
                                         <li className="top-user-area-avatar">
-                                            <Link to="/profile">
+                                            <Link to={{pathname: '/profile', state: this.props.user}}>
                                                 <img className="origin round" src={this.props.user.image} alt="" title="AMaze" />Olá, {this.props.user.firstName}
                                             </Link>
                                         </li>

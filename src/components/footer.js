@@ -6,13 +6,17 @@ class Footer extends React.Component {
 
 	componentDidMount() {
 		if( typeof window.customTraveler === "object" ){
-	        window.customTraveler.init();
+			window.setTimeout(function() {
+	        	window.customTraveler.init();
+	        }, 10);
 	    }
 	}	    
 
 	componentDidUpdate() {
 		if( typeof window.customTraveler === "object" ){
-	        window.customTraveler.init();
+	        window.setTimeout(function() {
+	        	window.customTraveler.init();
+	        }, 10);
 	    }
 	}
 
@@ -22,9 +26,9 @@ class Footer extends React.Component {
 	            <div className="container">
 	                <div className="row row-wrap">
 	                    <div className="col-md-3">
-	                        <a className="logo" href="index.html">
+	                        <Link className="logo" to="/">
 	                            <img src={Logo} alt="" title="Image Title" />
-	                        </a>
+	                        </Link>
 	                        <p className="mb20">Booking, reviews and advices on hotels, resorts, flights, vacation rentals, travel packages, and lots more!</p>
 	                        <ul className="list list-horizontal list-space">
 	                            <li>
