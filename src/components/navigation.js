@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router';
-import Logo from '../img/logo-invert.png';
 
 class Navigation extends React.Component {
 
@@ -12,7 +11,7 @@ class Navigation extends React.Component {
                         <div className="row">
                             <div className="col-md-3">
                                 <Link className="logo" to="/">
-                                    <img src={Logo} alt="" title="Image Title" />
+                                    <img src="/img/logo-invert.png" alt="" title="Image Title" />
                                 </Link>
                             </div>
                             <div className="col-md-3 col-md-offset-2">
@@ -31,7 +30,7 @@ class Navigation extends React.Component {
                                                 <img className="origin round" src={this.props.user.image} alt="" title="AMaze" />Olá, {this.props.user.firstName}
                                             </Link>
                                         </li>
-                                        <li><Link to="#">Deslogar</Link>
+                                        <li><Link to="#" onClick={this.props.click}>Deslogar</Link>
                                         </li>
                                         <li className="nav-drop"><Link to="#">{this.props.user.config.currency}<i className="fa fa-angle-down"></i><i className="fa fa-angle-up"></i></Link>
                                             <ul className="list nav-drop-menu">
@@ -48,9 +47,9 @@ class Navigation extends React.Component {
                                             </ul>
                                         </li>
                                         <li className="top-user-area-lang nav-drop">
-                                            <Link to="#">
-                                                <img src="img/flags/32/br.png" alt="" title="Image Title" />{this.props.user.config.language}<i className="fa fa-angle-down"></i><i className="fa fa-angle-up"></i>
-                                            </Link>
+                                            <a href="#changeLanguage">
+                                                <img src="img/flags/32/br.png" alt="" title="Image Title" />{this.props.language}<i className="fa fa-angle-down"></i><i className="fa fa-angle-up"></i>
+                                            </a>
                                             <ul className="list nav-drop-menu">
                                                 <li>
                                                     <Link title="German" to="#">

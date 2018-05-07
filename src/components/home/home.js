@@ -18,7 +18,7 @@ class Home extends React.Component {
 		                <div className="bg-front full-height bg-front-mob-rel">
 		                    <div className="container full-height">
 		                        <div className="rel full-height">
-		                            <div className="tagline visible-lg" id="tagline"><span>{Language.get('pt-br', '__itsTimeTo')}</span>
+		                            <div className="tagline visible-lg" id="tagline"><span>{Language.get(this.props.state.language, '__itsTimeTo')}</span>
 		                                <ul>
 		                                    <li className="active">viver</li>
 		                                    <li>se divertir</li>
@@ -36,7 +36,7 @@ class Home extends React.Component {
 		                                <div className="tabbable">
 		                                    <ul className="nav nav-tabs" id="myTab">
 		                                        <li className="active">
-		                                        	<a href="#tab-plane" data-toggle="tab"><i className="fa fa-plane"></i> <span >Viagens</span></a>
+		                                        	<a href="#tab-plane" data-toggle="tab"><i className="fa fa-plane"></i> <span >{Language.get(this.props.state.language, '__journey')}</span></a>
 		                                        </li>
 		                                    </ul>
 		                                    <div className="tab-content">

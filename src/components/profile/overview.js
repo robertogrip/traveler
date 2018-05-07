@@ -1,6 +1,12 @@
 import React from 'react';
 
 class Overview extends React.Component {
+
+    constructor(props) {
+        super(props);
+        console.log(props);
+    }
+
 	render() {
 		return (
 			<div className="col-md-9">

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router';
-import Logo from '../img/logo-invert.png';
 
 class Footer extends React.Component {
 
@@ -27,7 +26,7 @@ class Footer extends React.Component {
 	                <div className="row row-wrap">
 	                    <div className="col-md-3">
 	                        <Link className="logo" to="/">
-	                            <img src={Logo} alt="" title="Image Title" />
+	                            <img src="/img/logo-invert.png" alt="" title="Image Title" />
 	                        </Link>
 	                        <p className="mb20">Booking, reviews and advices on hotels, resorts, flights, vacation rentals, travel packages, and lots more!</p>
 	                        <ul className="list list-horizontal list-space">

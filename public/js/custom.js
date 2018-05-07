@@ -50,31 +50,32 @@ window.customTraveler = {
             });
         });
 
-        $('.typeahead').typeahead({
-            hint: true,
-            highlight: true,
-            minLength: 3,
-            limit: 8
-        }, {
-            source: function(q, cb) {
-                return $.ajax({
-                    dataType: 'json',
-                    type: 'get',
-                    url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + q,
-                    chache: false,
-                    success: function(data) {
-                        var result = [];
-                        $.each(data, function(index, val) {
-                            result.push({
-                                value: val
+        if( !$('.typeahead').hasClass('tt-hint') && !$('.typeahead').hasClass('tt-input') ) {
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 3,
+                limit: 8
+            }, {
+                source: function(q, cb) {
+                    return $.ajax({
+                        dataType: 'json',
+                        type: 'get',
+                        url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + q,
+                        chache: false,
+                        success: function(data) {
+                            var result = [];
+                            $.each(data, function(index, val) {
+                                result.push({
+                                    value: val
+                                });
                             });
-                        });
-                        cb(result);
-                    }
-                });
-            }
-        });
-
+                            cb(result);
+                        }
+                    });
+                }
+            });
+        }
 
         $('input.date-pick, .input-daterange, .date-pick-inline').datepicker({
             todayHighlight: true,

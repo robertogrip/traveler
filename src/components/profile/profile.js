@@ -3,15 +3,8 @@ import {Link} from 'react-router';
 
 class Profile extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			user: props.location.state
-		};
-	}
-
 	render() {
-		const children = this.props.children;
+		const childrenWithProps = React.cloneElement(this.props.children, {state: this.props.state});
 
 		return (
 			<div>
@@ -24,16 +17,16 @@ class Profile extends React.Component {
 		                <div className="col-md-3">
 		                    <aside className="user-profile-sidebar">
 		                        <div className="user-profile-avatar text-center">
-		                            <img src={this.state.user.image} alt="" title="AMaze" />
-		                            <h5>{this.state.user.fullName}</h5>
+		                            <img src={this.props.state.user.image} alt="" title="AMaze" />
+		                            <h5>{this.props.state.user.fullName}</h5>
 		                            <p>Membro desde 2015</p>
 		                        </div>
 		                        <ul className="list user-profile-nav">
 		                            <li className={ this.props.location.pathname === "/profile" ? 'active' : '' }>
-		                            	<Link to={{pathname: '/profile', state: this.state.user}}><i className="fa fa-user"></i>Visão geral</Link>
+		                            	<Link to={{pathname: '/profile', state: this.props.state.user}}><i className="fa fa-user"></i>Visão geral</Link>
 		                            </li>
 		                            <li className={ this.props.location.pathname === "/profile/settings" ? 'active' : '' }>
-		                            	<Link to={{pathname: '/profile/settings', state: this.state.user}}><i className="fa fa-cog"></i>Configurações</Link>
+		                            	<Link to={{pathname: '/profile/settings', state: this.props.state.user}}><i className="fa fa-cog"></i>Configurações</Link>
 		                            </li>
 		                            <li>
 		                            	<Link to="user-profile-photos.html"><i className="fa fa-camera"></i>Minhas fotos de Viagens</Link>
@@ -51,7 +44,7 @@ class Profile extends React.Component {
 		                    </aside>
 		                </div>
 
-		                { children }
+		                { childrenWithProps }
 		                
 		            </div>
 		        </div>
